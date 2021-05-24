@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}
+    Signup
+{% endblock title %}
+
+{% block body %}
+
+<form method="POST" action="/signup">
+    {% csrf_token %}
+<div class="mb-3">
+    <label for="username" class="form-label"> Enter Your Username</label>
+    <input type="text" name="username" class="form-control" id="username" aria-describedby="emailHelp" required>
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email address</label>
+    <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" required>
+  </div>
+  <div class="mb-3">
+    <label for="password1" class="form-label">Password</label>
+    <input type="password" name="password1" class="form-control" id="password1" required>
+  </div>
+    <div class="mb-3">
+    <label for="password2" class="form-label">Confirm Password</label>
+    <input type="password" name="password2" class="form-control" id="password2" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Signup</button>
+</form>
+
+{% endblock body %}

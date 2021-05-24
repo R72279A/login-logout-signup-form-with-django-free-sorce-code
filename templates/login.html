@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}
+    Login
+{% endblock title %}
+
+{% block body %}
+
+<form method="POST">
+    {% csrf_token %}
+<div class="mb-3">
+    <label for="loginusername" class="form-label">Enter Your Username</label>
+    <input type="text" name="loginusername" class="form-control" id="loginusername" aria-describedby="emailHelp" required>
+  </div>
+  <div class="mb-3">
+    <label for="loginpassword" class="form-label">Password</label>
+    <input type="password" name="loginpassword" class="form-control" id="loginpassword" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>
+
+{% endblock body %}
